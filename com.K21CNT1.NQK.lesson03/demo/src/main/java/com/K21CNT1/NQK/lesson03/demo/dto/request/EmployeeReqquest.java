@@ -1,15 +1,15 @@
 package com.K21CNT1.NQK.lesson03.demo.dto.request;
 
-public class EmployeeController {
+public class EmployeeRequest {  // Sửa từ EmployeeController -> EmployeeRequest
     private int id;
     private String firstName;
     private String lastName;
     private String email;
 
-    public EmployeeController() {
+    public EmployeeRequest() {
     }
 
-    public EmployeeController(int id, String firstName, String lastName, String email) {
+    public EmployeeRequest(int id, String firstName, String lastName, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

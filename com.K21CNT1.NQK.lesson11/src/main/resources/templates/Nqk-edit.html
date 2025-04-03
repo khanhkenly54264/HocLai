@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chỉnh sửa tài khoản</title>
+  <style>
+    /* Resetting some default browser styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* Container styling */
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    /* Title styling */
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+
+    /* Form label styling */
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    /* Input, select and button styling */
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    input:focus, select:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    /* Button styling */
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Chỉnh sửa tài khoản</h1>
+  <form id="editAccountForm" action="/api/accounts/update" method="POST">
+    <input type="hidden" id="accountId" name="id">
+
+    <label for="username">Tên người dùng:</label>
+    <input type="text" id="username" name="Nqk_User" required>
+
+    <label for="password">Mật khẩu:</label>
+    <input type="password" id="password" name="Nqk_Pass" required>
+
+    <label for="name">Họ và tên:</label>
+    <input type="text" id="name" name="Nqk_Name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="Nqk_Email" required>
+
+    <label for="phone">Số điện thoại:</label>
+    <input type="text" id="phone" name="Nqk_Phone" required>
+
+    <label for="address">Địa chỉ:</label>
+    <input type="text" id="address" name="Nqk_Address">
+
+    <label for="status">Trạng thái:</label>
+    <select id="status" name="Nqk_Status">
+      <option value="true">Hoạt động</option>
+      <option value="false">Không hoạt động</option>
+    </select>
+
+    <button type="submit">Cập nhật tài khoản</button>
+  </form>
+</div>
+
+<script>
+  // Hàm lấy dữ liệu tài khoản để điền vào form (giả sử có API trả về thông tin)
+  function loadAccountData(accountId) {
+    // Dữ liệu ví dụ
+    const account = {
+      id: 1,
+      Nqk_User: "user1",
+      Nqk_Pass: "password123",
+      Nqk_Name: "Nguyen Van A",
+      Nqk_Email: "a@gmail.com",
+      Nqk_Phone: "0123456789",
+      Nqk_Address: "Hà Nội",
+      Nqk_Status: true,
+    };
+
+    // Điền dữ liệu vào form
+    document.getElementById("accountId").value = account.id;
+    document.getElementById("username").value = account.Nqk_User;
+    document.getElementById("password").value = account.Nqk_Pass;
+    document.getElementById("name").value = account.Nqk_Name;
+    document.getElementById("email").value = account.Nqk_Email;
+    document.getElementById("phone").value = account.Nqk_Phone;
+    document.getElementById("address").value = account.Nqk_Address;
+    document.getElementById("status").value = account.Nqk_Status ? "true" : "false";
+  }
+
+  // Giả sử ID tài khoản cần chỉnh sửa
+  const accountId = 1;
+  loadAccountData(accountId);
+</script>
+</body>
+</html>

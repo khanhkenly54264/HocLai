@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sách tài khoản</title>
+  <style>
+    /* Reset styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* Container styling */
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    /* Title styling */
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+
+    /* Table styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* Button styling */
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Danh sách tài khoản</h1>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tên người dùng</th>
+      <th>Họ và tên</th>
+      <th>Email</th>
+      <th>Số điện thoại</th>
+      <th>Trạng thái</th>
+    </tr>
+    </thead>
+    <tbody id="accountList">
+    <!-- Các hàng dữ liệu sẽ được thêm tự động bằng JavaScript -->
+    </tbody>
+  </table>
+  <a href="../../../../target/classes/templates/Nqk-add.html" class="button">Thêm tài khoản mới</a>
+</div>
+
+<script>
+  // Dữ liệu ví dụ (có thể thay thế bằng dữ liệu thật từ API)
+  const accounts = [
+    { id: 1, username: "user1", name: "Nguyen Van A", email: "a@gmail.com", phone: "0123456789", status: "Hoạt động" },
+    { id: 2, username: "user2", name: "Tran Van B", email: "b@gmail.com", phone: "0987654321", status: "Không hoạt động" },
+  ];
+
+  // Hàm hiển thị danh sách tài khoản
+  function renderAccountList() {
+    const tbody = document.getElementById("accountList");
+    tbody.innerHTML = ""; // Xóa nội dung cũ
+    accounts.forEach(account => {
+      const row = `
+                    <tr>
+                        <td>${account.id}</td>
+                        <td>${account.username}</td>
+                        <td>${account.name}</td>
+                        <td>${account.email}</td>
+                        <td>${account.phone}</td>
+                        <td>${account.status}</td>
+                    </tr>
+                `;
+      tbody.innerHTML += row;
+    });
+  }
+
+  // Gọi hàm để hiển thị dữ liệu
+  renderAccountList();
+</script>
+</body>
+</html>

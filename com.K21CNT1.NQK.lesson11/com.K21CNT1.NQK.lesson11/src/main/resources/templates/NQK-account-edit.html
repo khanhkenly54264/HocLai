@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sửa thông tin tài khoản</title>
+</head>
+<body>
+<h1>Sửa thông tin tài khoản</h1>
+<form action="/accounts/edit" method="post">
+    <input type="hidden" id="id" name="hvt_id" value="<!-- ID của tài khoản -->">
+
+    <label for="user">Tên người dùng:</label>
+    <input type="text" id="user" name="hvt_user" value="<!-- Tên người dùng hiện tại -->"><br>
+
+    <label for="name">Họ và Tên:</label>
+    <input type="text" id="name" name="hvt_name" value="<!-- Họ và tên hiện tại -->"><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="hvt_email" value="<!-- Email hiện tại -->"><br>
+
+    <label for="phone">Số điện thoại:</label>
+    <input type="tel" id="phone" name="hvt_phone" value="<!-- Số điện thoại hiện tại -->"><br>
+
+    <label for="address">Địa chỉ:</label>
+    <textarea id="address" name="hvt_address"><!-- Địa chỉ hiện tại --></textarea><br>
+
+    <label for="status">Trạng thái:</label>
+    <select id="status" name="hvt_status">
+        <option value="active">Hoạt động</option>
+        <option value="inactive">Ngừng hoạt động</option>
+    </select><br>
+
+    <button type="submit">Lưu thông tin</button>
+</form>
+</body>
+</html>
